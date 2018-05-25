@@ -8,7 +8,8 @@ import java.io.Serializable;
 /**
  * 基础返回信息
  * <p/>
- * Created by haiyang.song on 16/6/29.
+ * @author haiyang.song
+ * @version 2015-6-5
  */
 public class BaseRes implements Serializable {
     /**

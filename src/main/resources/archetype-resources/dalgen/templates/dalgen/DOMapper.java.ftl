@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.Param;
  * 由于需要对分页支持,请直接使用对应的DAO类
  * The Table ${doMapper.tableName!}.
  * ${doMapper.desc!}
+ * 禁止手动修改，所有DAL相关数据库操作使用dalgen生成。
  */
 public interface ${doMapper.className}{
 

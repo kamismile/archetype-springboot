@@ -16,6 +16,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
+ * Dubbo配置管理
+ *
  * @author haiyang.song
  * @version 2015-6-5
  */

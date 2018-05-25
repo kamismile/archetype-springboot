@@ -8,6 +8,7 @@
 package ${doMapper.packageName};
 import java.util.List;
 /**
+ * 禁止手动修改，所有DAL相关数据库操作使用dalgen生成。
  * 数据库字段检查
  */
 public interface ${dbName}DBPreCheckMapper{

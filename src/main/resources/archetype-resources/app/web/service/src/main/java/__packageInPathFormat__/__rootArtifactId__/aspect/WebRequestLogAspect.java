@@ -24,7 +24,8 @@ import java.util.Date;
 /**
  * 通用外部接口调用处理
  * <p/>
- * Created by haiyang.song on 16/7/7.
+ * @author haiyang.song
+ * @version 2015-6-5
  */
 @Aspect
 @Component

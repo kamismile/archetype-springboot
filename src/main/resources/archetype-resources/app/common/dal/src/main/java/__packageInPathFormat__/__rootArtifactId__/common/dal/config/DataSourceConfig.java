@@ -20,6 +20,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 /**
+ * 数据源管理
+ *
  * @author haiyang.song
  * @version 2015-6-5
  */

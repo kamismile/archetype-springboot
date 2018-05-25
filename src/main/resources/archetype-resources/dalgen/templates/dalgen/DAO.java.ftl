@@ -11,6 +11,7 @@ import ${import};
 </#list>
 
 /**
+* 禁止手动修改，所有DAL相关数据库操作使用dalgen生成。
 * The Table ${dao.tableName!}.
 * ${dao.desc!}
 */

@@ -33,8 +33,6 @@ import java.util.Date;
  * 提供外部服务进行检查，统一抛出ServiceException
  * 如果有外部调用则在检查后抛出，IntegrationServiceException
  * 如果业务逻辑内处理异常则统一抛出BizException
- * <p>
- * Exception 都会包装成 false,false
  * <p/>
  *
  * @author haiyang.song

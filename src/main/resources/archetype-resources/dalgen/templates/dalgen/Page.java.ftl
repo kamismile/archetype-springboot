@@ -9,6 +9,7 @@ import ${import};
 
 /**
  * The table ${paging.desc!}
+ * 禁止手动修改，所有DAL相关数据库操作使用dalgen生成。
  */
 public class ${paging.className} extends BasePage<${paging.resultType}>{
 

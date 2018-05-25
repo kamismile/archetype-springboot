@@ -11,6 +11,7 @@ import com.google.common.collect.Maps;
 
 /**
  * 用于分页的工具类
+ * 禁止手动修改，所有DAL相关数据库操作使用dalgen生成。
  */
 public class BasePage<T> {
 
