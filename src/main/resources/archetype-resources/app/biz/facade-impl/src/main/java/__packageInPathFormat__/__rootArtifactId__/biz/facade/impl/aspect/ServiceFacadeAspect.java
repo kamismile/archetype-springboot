@@ -1,7 +1,7 @@
 #set($symbol_pound='#')
-#set($symbol_dollar='$')
-#set($symbol_escape='\' )
-package ${package}.${rootArtifactId}.biz.facade.impl.aspect;
+        #set($symbol_dollar='$')
+        #set($symbol_escape='\' )
+        package ${package}.${rootArtifactId}.biz.facade.impl.aspect;
 
 import ${package}.${rootArtifactId}.common.service.model.res.BaseRes;
 import ${package}.${rootArtifactId}.common.util.DubboUtils;
@@ -72,7 +72,7 @@ public class ServiceFacadeAspect {
         } catch (BizException e) {
             baseRes.setCode(e.getError().getErrorCode());
             baseRes.setErrmsg(e.getError().getErrorMessage());
-            defaultLogger.error(head + ",BIZ_ERROR", e);
+            defaultLogger.error(head + ",BIZ_ERROR," + e.getError().getErrorCode() + "," + e.getMessage());
             return baseRes;
         } catch (Exception e) {
             baseRes.setCode(ErrorEnum.ERROR_DEFAULT.getErrorCode());

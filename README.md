@@ -12,17 +12,26 @@
 ``
 ## 待支持功能点
 
-* redis支持
 * mq支持
 * 分库分表支持
 * 分布式调度支持 elastic-job
 * 分布式配置中心支持 diamond
-* 系统存活监控
-* 全程溯源ID
+
 * 数据库连接池优化
 * API接口文档支持
 * 阿里云组件支持OSS等
 * Sequence生成
+
+## v1.2.1
+**author:haiyang.song**
+**date:2018-05-25**
+
+### 修订内容
+* Sequence生成支持，使用表结构加缓存方式支持自增序列的支持。
+* redis工具支持。
+* 系统存活监控。
+* 编写测试使用多结构demo,demo-apple,demo-banana,demo-cherry。
+
 
 ## v1.2.0
 
@@ -35,7 +44,6 @@
 * 升级dalgen版本，说明参考：https://gitee.com/bangis/mybatis.generator/wikis/pages?title=Home&parent=
 * 增加规范化日志，具体参考log4j.xml
 * 增加全链路跟踪ID,`REQ_ID'存储在Dubbo上下文中，通过拦截器直接打印到接口层日志。
-* 编写测试使用多结构demo,demo-apple,demo-banana,demo-cherry。
 
 ### 快速说明
 

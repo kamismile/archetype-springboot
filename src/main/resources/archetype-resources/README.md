@@ -1,12 +1,36 @@
-## 项目说明
-
-author:haiyang.song
-
-version:1.1.0
+# 项目说明
 
 ## 整体服务架构设计
 
 ![整体服务架构设计](http://oppxlx6i0.bkt.clouddn.com/%E6%9C%89%E5%83%8F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+### Sequence支持
+
+* 表结构初始化脚本
+
+```sql
+CREATE TABLE `sys_sequence` (
+  `SEQ_NAME` varchar(128) CHARACTER SET utf8 NOT NULL COMMENT '序列名称',
+  `GMT_CREATED` datetime NOT NULL COMMENT '创建时间',
+  `GMT_MODIFIED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `SEQ_VALUE` bigint(20) NOT NULL COMMENT '目前序列值',
+  `MIN_VALUE` bigint(20) NOT NULL COMMENT '最小值',
+  `MAX_VALUE` bigint(20) NOT NULL COMMENT '最大值',
+  `STEP` bigint(20) NOT NULL COMMENT '每次取值的数量',
+  PRIMARY KEY (`SEQ_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='流水号生成表';
+
+INSERT INTO democherry.sys_sequence (SEQ_NAME, GMT_CREATED, GMT_MODIFIED, SEQ_VALUE, MIN_VALUE, MAX_VALUE, STEP)
+VALUES ('SEQ_CHERRY_ID', now(), now(), 1, 1, 100000000, 100);
+```
+
+* 配置启用`application.porperties``
+
+```
+#SEQ
+seq.enable=true
+seq.init.retry=3
+seq.get.retry=3
+```
 
 ### 环境地址
 

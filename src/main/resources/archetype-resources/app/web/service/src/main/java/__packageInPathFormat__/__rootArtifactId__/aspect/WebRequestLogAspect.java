@@ -58,7 +58,7 @@ public class WebRequestLogAspect {
         } catch (BizException e) {
             baseRes.setCode(e.getError().getErrorCode());
             baseRes.setErrmsg(e.getError().getErrorMessage());
-            defaultLogger.error(head + ",BIZ_ERROR", e);
+            defaultLogger.error(head + ",BIZ_ERROR," + e.getError().getErrorCode() + "," + e.getMessage());
             return baseRes;
         } catch (Exception e) {
             baseRes.setCode(ErrorEnum.ERROR_DEFAULT.getErrorCode());
