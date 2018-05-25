@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+    <!-- ===================================================================== -->
+    <!-- Appenders -->
+    <!-- ===================================================================== -->
+
+    <!-- [公共Appender] 控制台STDOUT -->
+    <appender name="STDOUT-APPENDER" class="org.apache.log4j.ConsoleAppender">
+        <param name="encoding" value="UTF8"/>
+        <!--<param name="target" value="System.out"/>-->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [公共Appender] 控制台STDERR -->
+    <appender name="STDERR-APPENDER" class="org.apache.log4j.ConsoleAppender">
+        <param name="encoding" value="UTF8"/>
+        <param name="target" value="System.err"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- ===== [Common Appender] ===== -->
+    <!-- [Common Appender] 默认 -->
+    <appender name="COMMON-DEFAULT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/common-default.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Common Appender] 汇总错误 -->
+    <appender name="COMMON-ERROR-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/common-error.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <param name="threshold" value="error"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Common Appender] 严重错误日志 -->
+    <appender name="COMMON-ALERT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/common-alert.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Common Appender] 性能日志 -->
+    <appender name="COMMON-PERF-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/common-perf.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- ===== [API Appender] ===== -->
+    <!-- [Web Api Appender] Web接口摘要日志 -->
+    <appender name="WEB-API-DIGEST-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/web-api-digest.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Web Api Appender] Web接口默认日志 -->
+    <appender name="WEB-API-DEFAULT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/web-api-default.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Service Api Appender] RpcService接口摘要日志 -->
+    <appender name="SERVICE-API-DIGEST-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/service-api-digest.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Service Api Appender] RpcService接口默认日志 -->
+    <appender name="SERVICE-API-DEFAULT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/service-api-default.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Integration Api Appender] Rpc外部依赖接口摘要日志 -->
+    <appender name="INTEGRATION-API-DIGEST-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/integration-api-digest.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Integration Api Appender] Rpc外部依赖接口默认日志 -->
+    <appender name="INTEGRATION-API-DEFAULT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/integration-api-default.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Data Appender] 数据日志 -->
+    <!-- [Data Dal Appender] 数据库摘要日志 -->
+    <appender name="DATA-DAL-DIGEST-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/data-dal-digest.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Biz Appender] 业务日志 -->
+    <!-- [Biz Appender] 默认业务日志 -->
+    <appender name="BIZ-DEFAULT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/biz-default.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <param name="threshold" value="error"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Biz Appender] 调度任务业务日志 -->
+    <appender name="BIZ-JOB-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/biz-job.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <param name="threshold" value="error"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- [Framework or 3rd Appender] 框架或者三方依赖 -->
+    <!-- [Spring Appender] 调度任务业务日志 -->
+    <appender name="FRAMEWORK-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/framework-all.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF8"/>
+        <param name="threshold" value="error"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%c] - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <!-- ===================================================================== -->
+    <!-- Loggers -->
+    <!-- ===================================================================== -->
+
+    <!-- ===== [应用Logger] ===== -->
+    <!-- [应用Logger] demo核心 - 默认 -->
+    <logger name="com.fruit" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="COMMON-DEFAULT-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="com.apache" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="FRAMEWORK-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="com.alibaba.dubbo" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="FRAMEWORK-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="org.springframework" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="FRAMEWORK-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="COMMON-ALERT-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="COMMON-ALERT-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="COMMON-PERF-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="COMMON-PERF-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="WEB-API-DIGEST-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="WEB-API-DIGEST-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="WEB-API-DEFAULT-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="WEB-API-DEFAULT-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="SERVICE-API-DIGEST-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="SERVICE-API-DIGEST-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="SERVICE-API-DEFAULT-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="SERVICE-API-DEFAULT-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="INTEGRATION-API-DIGEST-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="INTEGRATION-API-DIGEST-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="INTEGRATION-API-DEFAULT-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="INTEGRATION-API-DEFAULT-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="BIZ-DEFAULT-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="BIZ-DEFAULT-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <logger name="BIZ-JOB-LOGGER" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="BIZ-JOB-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <!-- [公共Logger] 控制台STDOUT - STDOUT -->
+    <logger name="STDOUT" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </logger>
+
+    <!-- [公共Logger] 控制台STDERR - STDERR -->
+    <logger name="STDERR" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="STDERR-APPENDER"/>
+    </logger>
+
+    <!-- ===================================================================== -->
+    <!-- Root logger -->
+    <!-- ===================================================================== -->
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="COMMON-DEFAULT-APPENDER"/>
+        <appender-ref ref="COMMON-ERROR-APPENDER"/>
+        <appender-ref ref="STDOUT-APPENDER"/>
+    </root>
+
+</log4j:configuration>
+
