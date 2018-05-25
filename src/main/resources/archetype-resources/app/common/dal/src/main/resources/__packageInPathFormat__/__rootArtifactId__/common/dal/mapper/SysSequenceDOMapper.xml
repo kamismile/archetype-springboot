@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="${package}.${rootArtifactId}.common.dal.mapper.SysSequenceDOMapper">
+    <!-- 自动生成,请修改 SYS_SEQUENCE.xml -->
+    <resultMap id="BaseResultMap"  type="${package}.${rootArtifactId}.common.dal.dataobject.SysSequenceDO">
+        <result column="STEP" property="step" jdbcType="BIGINT" javaType="Long"/>
+        <result column="MAX_VALUE" property="maxValue" jdbcType="BIGINT" javaType="Long"/>
+        <result column="MIN_VALUE" property="minValue" jdbcType="BIGINT" javaType="Long"/>
+        <result column="SEQ_VALUE" property="seqValue" jdbcType="BIGINT" javaType="Long"/>
+        <result column="SEQ_NAME" property="seqName" jdbcType="VARCHAR" javaType="String"/>
+        <result column="GMT_CREATED" property="gmtCreated" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        <result column="GMT_MODIFIED" property="gmtModified" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+        STEP,MAX_VALUE,MIN_VALUE,SEQ_VALUE,SEQ_NAME,GMT_CREATED,GMT_MODIFIED
+    </sql>
+
+
+    <!--更新表:sys_sequence-->
+    <update id="updateSeqValue" >
+        <![CDATA[
+        UPDATE /*MS-SYS-SEQUENCE-UPDATESEQVALUE*/ sys_sequence
+        SET
+            SEQ_VALUE       = #{seqValue,jdbcType=BIGINT}
+            ,GMT_MODIFIED    = now()
+        WHERE
+            SEQ_NAME        = #{seqName,jdbcType=VARCHAR}
+        ]]>
+    </update>
+
+    <!--根据主键获取数据:sys_sequence-->
+    <select id="getBySeqName" resultMap="BaseResultMap">
+        SELECT /*MS-SYS-SEQUENCE-GETBYSEQNAME*/  <include refid="Base_Column_List" />
+        FROM sys_sequence
+        WHERE
+        <![CDATA[
+            SEQ_NAME = #{seqName,jdbcType=VARCHAR}
+        ]]>
+    </select>
+
+    <!--查询所有:sys_sequence-->
+    <select id="getAllSeq" resultMap="BaseResultMap">
+        SELECT /*MS-SYS-SEQUENCE-GETALLSEQ*/  <include refid="Base_Column_List" />
+        FROM sys_sequence
+    </select>
+</mapper>
