@@ -31,13 +31,13 @@ public class SequenceFactory {
     @Autowired
     private SysSequenceDAO sysSequenceDAO;
 
-    @Value("${seq.enable:false}")
+    @Value("${symbol_dollar}{seq.enable:false}")
     private boolean switchStatus;
     //单个sequence初始化乐观锁更新失败重试次数
-    @Value("${seq.init.retry:5}")
+    @Value("${symbol_dollar}{seq.init.retry:5}")
     private int initRetryNum;
     //单个sequence更新序列区间乐观锁更新失败重试次数
-    @Value("${seq.get.retry:20}")
+    @Value("${symbol_dollar}{seq.get.retry:20}")
     private int getRetryNum;
 
     @PostConstruct

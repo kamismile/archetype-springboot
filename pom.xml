@@ -6,7 +6,7 @@
 
     <groupId>com.maven.archetype</groupId>
     <artifactId>archetype-springboot</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1-SNAPSHOP</version>
 
 
     <build>
