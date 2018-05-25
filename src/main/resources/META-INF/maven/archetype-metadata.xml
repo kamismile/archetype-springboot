@@ -55,7 +55,7 @@
             </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
-            <directory></directory>
+            <directory>.</directory>
             <includes>
                 <include>*.md</include>
                 <include>.gitignore</include>

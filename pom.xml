@@ -39,6 +39,7 @@
                         <encoding>UTF-8</encoding>
                         <includeEmptyDirs>true</includeEmptyDirs>
                         <useDefaultDelimiters>false</useDefaultDelimiters>
+                        <addDefaultExcludes>false</addDefaultExcludes>
                         <delimiters>
                             <delimiter>$[*]</delimiter>
                         </delimiters>
